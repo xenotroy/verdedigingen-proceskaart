@@ -1543,14 +1543,44 @@ html&gt;body{padding:0}&lt;/style&gt;
     #verdediging-flow * { box-sizing: border-box; }
     #verdediging-flow h2 { margin: 0 0 .35rem; }
     #verdediging-flow p { margin: 0; }
-    #verdediging-flow .vf-intro { max-width: 66ch; color: var(--muted-foreground); margin-bottom: 1.1rem; }
+    #verdediging-flow .vf-intro { max-width: 74ch; color: var(--muted-foreground); margin-bottom: 1.1rem; }
+    #verdediging-flow .vf-route { margin: 1.5rem 0 2.5rem; }
+    #verdediging-flow .vf-route h3 { margin: 0 0 .25rem; }
+    #verdediging-flow .vf-route-intro { color: var(--muted-foreground); margin-bottom: 1rem; }
+    #verdediging-flow .vf-route-phase { margin: 1.15rem 0 .35rem; font-weight: 500; color: var(--muted-foreground); }
+    #verdediging-flow .vf-route-row { display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: .9rem; position: relative; padding: .85rem 0 1.2rem; border-bottom: 1px solid var(--border); }
+    #verdediging-flow .vf-route-row::after { content: &#x27;↓&#x27;; position: absolute; left: .65rem; bottom: -.66rem; color: var(--muted-foreground); background: var(--background); padding: 0 .12rem; z-index: 2; }
+    #verdediging-flow .vf-route-row:last-child::after { content: none; }
+    #verdediging-flow .vf-route-num { align-self: start; display: grid; place-items: center; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: var(--muted); color: var(--foreground); font-variant-numeric: tabular-nums; font-weight: 500; }
+    #verdediging-flow .vf-route-row.is-gate .vf-route-num { background: color-mix(in srgb, var(--viz-series-3) 20%, var(--background)); color: var(--foreground); }
+    #verdediging-flow .vf-route-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: .35rem .8rem; margin-bottom: .55rem; }
+    #verdediging-flow .vf-route-head strong { font-weight: 500; }
+    #verdediging-flow .vf-route-head a { color: var(--foreground); text-decoration: underline; text-decoration-color: var(--border); text-underline-offset: .2rem; }
+    #verdediging-flow .vf-human { color: var(--viz-series-1); }
+    #verdediging-flow .vf-track { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1.15fr) auto minmax(0, 1fr); align-items: stretch; gap: .45rem; }
+    #verdediging-flow .vf-unit { min-width: 0; padding: .55rem .65rem; background: var(--muted); color: var(--foreground); border-radius: .35rem; }
+    #verdediging-flow .vf-unit.decision { background: color-mix(in srgb, var(--viz-series-3) 12%, var(--background)); border: 1px solid color-mix(in srgb, var(--viz-series-3) 45%, var(--border)); }
+    #verdediging-flow .vf-unit.output { background: color-mix(in srgb, var(--viz-series-3) 9%, var(--background)); }
+    #verdediging-flow .vf-unit .vf-cap { display: block; color: var(--muted-foreground); font-size: .78em; letter-spacing: .035em; text-transform: uppercase; margin-bottom: .18rem; }
+    #verdediging-flow .vf-unit.decision .vf-cap { color: var(--foreground); }
+    #verdediging-flow .vf-arrow { align-self: center; color: var(--muted-foreground); font-size: 1.25rem; }
+    #verdediging-flow .vf-divert { display: flex; align-items: flex-start; gap: .55rem; margin: .48rem 0 0; padding: .35rem .55rem; border-left: 2px solid var(--destructive); color: var(--foreground); }
+    #verdediging-flow .vf-divert .vf-cap { flex: none; color: var(--destructive); font-size: .78em; letter-spacing: .035em; text-transform: uppercase; font-weight: 500; }
+    #verdediging-flow .vf-divert.rework { border-color: var(--viz-series-1); }
+    #verdediging-flow .vf-divert.rework .vf-cap { color: var(--viz-series-1); }
+    #verdediging-flow .vf-route-special { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; margin-top: .5rem; }
+    #verdediging-flow .vf-route-special .vf-unit { background: var(--muted); }
+    #verdediging-flow .vf-route-special strong { font-weight: 500; }
+    #verdediging-flow .vf-open-norm { margin-top: .5rem; padding-left: .65rem; border-left: 2px solid var(--viz-series-3); color: var(--foreground); }
+    #verdediging-flow .vf-detail-heading { margin: 2rem 0 .35rem; }
+    #verdediging-flow .vf-detail-intro { color: var(--muted-foreground); }
     #verdediging-flow .vf-key { display: flex; flex-wrap: wrap; gap: .6rem 1.15rem; margin-bottom: 1.4rem; color: var(--muted-foreground); }
     #verdediging-flow .vf-key span { display: inline-flex; align-items: center; gap: .38rem; }
     #verdediging-flow .vf-dot { width: .58rem; height: .58rem; border-radius: 50%; background: var(--viz-series-1); flex: none; }
     #verdediging-flow .vf-dot.person { background: var(--viz-series-2); }
     #verdediging-flow .vf-dot.gate { background: var(--viz-series-3); }
     #verdediging-flow .vf-phase { margin: 1.6rem 0 .3rem 3.3rem; color: var(--muted-foreground); font-weight: 500; }
-    #verdediging-flow .vf-flow { position: relative; }
+    #verdediging-flow .vf-flow { position: relative; overflow-x: clip; }
     #verdediging-flow .vf-flow::before { content: &quot;&quot;; position: absolute; left: 1.12rem; top: 1rem; bottom: 1rem; width: 2px; background: var(--border); }
     #verdediging-flow details.vf-step { position: relative; margin: 0; padding-left: 3.3rem; border-bottom: 1px solid var(--border); }
     #verdediging-flow details.vf-step:last-child { border-bottom: 0; }
@@ -1583,6 +1613,11 @@ html&gt;body{padding:0}&lt;/style&gt;
     #verdediging-flow .vf-warning strong { font-weight: 500; }
     #verdediging-flow .vf-outro { margin: 1.3rem 0 0 3.3rem; color: var(--muted-foreground); }
     @media (max-width: 600px) {
+      #verdediging-flow .vf-route-row { grid-template-columns: 1.7rem minmax(0, 1fr); gap: .5rem; }
+      #verdediging-flow .vf-track { grid-template-columns: minmax(0, 1fr); gap: .25rem; }
+      #verdediging-flow .vf-arrow { text-align: center; line-height: .8; transform: rotate(90deg); }
+      #verdediging-flow .vf-route-special { grid-template-columns: 1fr; }
+      #verdediging-flow .vf-divert { flex-wrap: wrap; gap: .15rem; }
       #verdediging-flow .vf-body { grid-template-columns: 1fr; gap: .85rem; }
       #verdediging-flow .vf-meta { border-left: 0; border-top: 1px solid var(--border); padding: .7rem 0 0; }
       #verdediging-flow summary { min-height: 4.9rem; }
@@ -1590,12 +1625,99 @@ html&gt;body{padding:0}&lt;/style&gt;
   &lt;/style&gt;
 
   &lt;h2 id=&quot;vf-title&quot;&gt;Proceskaart examenverdediging&lt;/h2&gt;
-  &lt;p class=&quot;vf-intro&quot;&gt;Klik een kritisch moment open voor handelingen, stopregels en de voorgestelde Excel-status. De tijden zijn richtmomenten uit de aangeleverde lijst voor 11 december 2026; stel ze per examendag vast.&lt;/p&gt;
+  &lt;p class=&quot;vf-intro&quot;&gt;Volg per kritisch moment de input, de menselijke controle, de beslissing en de uitkomst. Klik op een stap voor de handelingen en de voorgestelde Excel-status. De tijden zijn richtmomenten uit de aangeleverde lijst voor 11 december 2026; stel ze per examendag vast.&lt;/p&gt;
   &lt;div class=&quot;vf-key text-small&quot; aria-label=&quot;Betekenis van markeringen&quot;&gt;
     &lt;span&gt;&lt;i class=&quot;vf-dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Eén keer per examendag&lt;/span&gt;
     &lt;span&gt;&lt;i class=&quot;vf-dot person&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Per deelnemer&lt;/span&gt;
     &lt;span&gt;&lt;i class=&quot;vf-dot gate&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Beslissing of blokkade&lt;/span&gt;
   &lt;/div&gt;
+
+  &lt;section class=&quot;vf-route&quot; aria-labelledby=&quot;vf-route-title&quot;&gt;
+    &lt;h3 id=&quot;vf-route-title&quot;&gt;Beslisroute in één oogopslag&lt;/h3&gt;
+    &lt;p class=&quot;vf-route-intro&quot;&gt;Groene route: gecontroleerd door. Zijroute: terug naar een actiehouder of formeel stoppen. De mens neemt de aangegeven beslissing; Excel registreert de status en het bewijs.&lt;/p&gt;
+
+    &lt;div class=&quot;vf-route-phase&quot;&gt;Voorbereiden&lt;/div&gt;
+    &lt;div class=&quot;vf-route-row&quot; data-route=&quot;vf-start&quot;&gt;
+      &lt;span class=&quot;vf-route-num&quot;&gt;01&lt;/span&gt;&lt;div&gt;
+        &lt;div class=&quot;vf-route-head&quot;&gt;&lt;strong&gt;&lt;a href=&quot;#vf-start&quot;&gt;Verdediging openen&lt;/a&gt;&lt;/strong&gt;&lt;span class=&quot;vf-human&quot;&gt;Mens · Opleidingen + examenbureau&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;vf-track&quot;&gt;&lt;div class=&quot;vf-unit&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Input&lt;/span&gt;Examendatum, zaalbehoefte, beschikbaarheid&lt;/div&gt;&lt;span class=&quot;vf-arrow&quot; aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;&lt;div class=&quot;vf-unit decision&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Beslissing&lt;/span&gt;Locatie, zalen, examinatoren en voorzitters haalbaar?&lt;/div&gt;&lt;span class=&quot;vf-arrow&quot; aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;&lt;div class=&quot;vf-unit output&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Ja · output&lt;/span&gt;Examendag en deadlines in Excel&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;vf-divert&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Nee · wacht&lt;/span&gt;&lt;span&gt;Geen definitieve examendag; capaciteit of bezetting regelen.&lt;/span&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;vf-route-row is-gate&quot; data-route=&quot;vf-intake&quot;&gt;
+      &lt;span class=&quot;vf-route-num&quot;&gt;02&lt;/span&gt;&lt;div&gt;
+        &lt;div class=&quot;vf-route-head&quot;&gt;&lt;strong&gt;&lt;a href=&quot;#vf-intake&quot;&gt;Scriptie-inname&lt;/a&gt;&lt;/strong&gt;&lt;span class=&quot;vf-human&quot;&gt;Mens · Opleidingen controleert bron en dubbeling&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;vf-track&quot;&gt;&lt;div class=&quot;vf-unit&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Input&lt;/span&gt;Website-upload, groen licht, bijlagen en eventuele mail&lt;/div&gt;&lt;span class=&quot;vf-arrow&quot; aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;&lt;div class=&quot;vf-unit decision&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Beslissing&lt;/span&gt;Juiste deelnemer en versie; dossier compleet en leesbaar?&lt;/div&gt;&lt;span class=&quot;vf-arrow&quot; aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;&lt;div class=&quot;vf-unit output&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Ja · output&lt;/span&gt;Dossiermap, Excelregistratie, ontvangstbevestiging&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;vf-divert&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Nee · blokkade&lt;/span&gt;&lt;span&gt;Ontbrekend of dubbel materiaal als actie vastleggen; nog geen examinator toewijzen.&lt;/span&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;vf-route-row&quot; data-route=&quot;vf-toewijzen&quot;&gt;
+      &lt;span class=&quot;vf-route-num&quot;&gt;03&lt;/span&gt;&lt;div&gt;
+        &lt;div class=&quot;vf-route-head&quot;&gt;&lt;strong&gt;&lt;a href=&quot;#vf-toewijzen&quot;&gt;Examinatoren toewijzen&lt;/a&gt;&lt;/strong&gt;&lt;span class=&quot;vf-human&quot;&gt;Mens · examenbureau/Jacco geeft akkoord&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;vf-track&quot;&gt;&lt;div class=&quot;vf-unit&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Input&lt;/span&gt;Compleet dossier en beschikbaarheid&lt;/div&gt;&lt;span class=&quot;vf-arrow&quot; aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;&lt;div class=&quot;vf-unit decision&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Beslissing&lt;/span&gt;Twee formele examinatoren beschikbaar en indeling akkoord?&lt;/div&gt;&lt;span class=&quot;vf-arrow&quot; aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;&lt;div class=&quot;vf-unit output&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Ja · output&lt;/span&gt;Scriptie verzonden; rapportkwaliteit uitgevraagd&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;vf-divert rework&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Nee · herplan&lt;/span&gt;&lt;span&gt;Indeling aanpassen; een meelopende derde telt niet als formele examinator.&lt;/span&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;vf-route-phase&quot;&gt;Beoordelen en besluiten&lt;/div&gt;
+    &lt;div class=&quot;vf-route-row is-gate&quot; data-route=&quot;vf-beoordeling&quot;&gt;
+      &lt;span class=&quot;vf-route-num&quot;&gt;04&lt;/span&gt;&lt;div&gt;
+        &lt;div class=&quot;vf-route-head&quot;&gt;&lt;strong&gt;&lt;a href=&quot;#vf-beoordeling&quot;&gt;Beoordelingen ontvangen&lt;/a&gt;&lt;/strong&gt;&lt;span class=&quot;vf-human&quot;&gt;Mens · Opleidingen controleert de formulieren&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;vf-track&quot;&gt;&lt;div class=&quot;vf-unit&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Input&lt;/span&gt;Twee formele formulieren en rapportkwaliteit&lt;/div&gt;&lt;span class=&quot;vf-arrow&quot; aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;&lt;div class=&quot;vf-unit decision&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Beslissing&lt;/span&gt;Bronnen, scores, toelichtingen en totalen compleet?&lt;/div&gt;&lt;span class=&quot;vf-arrow&quot; aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;&lt;div class=&quot;vf-unit output&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Ja · output&lt;/span&gt;Scores en feedback in Excel; door naar verschiltoets&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;vf-divert&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Nee · blokkade&lt;/span&gt;&lt;span&gt;Ontbrekende beoordeling opvragen; geen advies op één formeel cijfer.&lt;/span&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;vf-route-row is-gate&quot; data-route=&quot;vf-kalibratie&quot;&gt;
+      &lt;span class=&quot;vf-route-num&quot;&gt;05&lt;/span&gt;&lt;div&gt;
+        &lt;div class=&quot;vf-route-head&quot;&gt;&lt;strong&gt;&lt;a href=&quot;#vf-kalibratie&quot;&gt;Verschiltoets en kalibratie&lt;/a&gt;&lt;/strong&gt;&lt;span class=&quot;vf-human&quot;&gt;Mens · beide formele examinatoren kalibreren&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;vf-track&quot;&gt;&lt;div class=&quot;vf-unit&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Input&lt;/span&gt;Twee formele scores en motiveringen&lt;/div&gt;&lt;span class=&quot;vf-arrow&quot; aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;&lt;div class=&quot;vf-unit decision&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Beslissing&lt;/span&gt;Verschil boven signaalgrens van de werkkopie?&lt;/div&gt;&lt;span class=&quot;vf-arrow&quot; aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;&lt;div class=&quot;vf-unit output&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Nee · output&lt;/span&gt;Door naar adviesbepaling&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;vf-divert rework&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Ja · kalibreer&lt;/span&gt;&lt;span&gt;Beide formulieren delen, overleg laten voeren en schriftelijke uitkomst vastleggen. Tot dan geen uitnodiging.&lt;/span&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;vf-route-row is-gate&quot; data-route=&quot;vf-advies&quot;&gt;
+      &lt;span class=&quot;vf-route-num&quot;&gt;06&lt;/span&gt;&lt;div&gt;
+        &lt;div class=&quot;vf-route-head&quot;&gt;&lt;strong&gt;&lt;a href=&quot;#vf-advies&quot;&gt;Advies en toelating&lt;/a&gt;&lt;/strong&gt;&lt;span class=&quot;vf-human&quot;&gt;Mens · examinatoren besluiten bij twijfel; Opleidingen registreert&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;vf-track&quot;&gt;&lt;div class=&quot;vf-unit&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Input&lt;/span&gt;Gecontroleerde scores, feedback en kalibratie-uitkomst&lt;/div&gt;&lt;span class=&quot;vf-arrow&quot; aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;&lt;div class=&quot;vf-unit decision&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Beslissing&lt;/span&gt;Welke route volgt uit de bekrachtigde norm en beoordeling?&lt;/div&gt;&lt;span class=&quot;vf-arrow&quot; aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;&lt;div class=&quot;vf-unit output&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Output&lt;/span&gt;Besluit, onderbouwing en mailstatus apart in Excel&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;vf-route-special&quot;&gt;&lt;div class=&quot;vf-unit&quot;&gt;&lt;strong&gt;Positief&lt;/strong&gt;&lt;br&gt;Uitnodiging als concept; naar planning.&lt;/div&gt;&lt;div class=&quot;vf-unit&quot;&gt;&lt;strong&gt;Twijfelachtig&lt;/strong&gt;&lt;br&gt;Expliciet examinatorbesluit; bij toelating ook reactie cursist vragen.&lt;/div&gt;&lt;div class=&quot;vf-unit&quot;&gt;&lt;strong&gt;Negatief · stop&lt;/strong&gt;&lt;br&gt;Geen verdediging; synthese als PDF bij mailconcept.&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;vf-open-norm&quot;&gt;Normgrens is nog niet eenduidig vastgelegd. Geen automatische adviesroute totdat de bevoegde beslisser dit bevestigt.&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;vf-route-phase&quot;&gt;Inplannen en uitvoeren&lt;/div&gt;
+    &lt;div class=&quot;vf-route-row is-gate&quot; data-route=&quot;vf-planning&quot;&gt;
+      &lt;span class=&quot;vf-route-num&quot;&gt;07&lt;/span&gt;&lt;div&gt;
+        &lt;div class=&quot;vf-route-head&quot;&gt;&lt;strong&gt;&lt;a href=&quot;#vf-planning&quot;&gt;Zalen en tijdsloten plannen&lt;/a&gt;&lt;/strong&gt;&lt;span class=&quot;vf-human&quot;&gt;Mens · Opleidingen + examenbureau&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;vf-track&quot;&gt;&lt;div class=&quot;vf-unit&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Input&lt;/span&gt;Toegelaten, bevestigde deelnemers; duo&#x27;s en zalen&lt;/div&gt;&lt;span class=&quot;vf-arrow&quot; aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;&lt;div class=&quot;vf-unit decision&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Beslissing&lt;/span&gt;Iedereen exact één keer gepland, zonder tijd- of zaalconflict?&lt;/div&gt;&lt;span class=&quot;vf-arrow&quot; aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;&lt;div class=&quot;vf-unit output&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Ja · output&lt;/span&gt;Definitieve planning en tijdstipcommunicatie&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;vf-divert rework&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Nee · herplan&lt;/span&gt;&lt;span&gt;Ontbrekende deelnemer, dubbeling of conflict corrigeren; planning blijft concept.&lt;/span&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;vf-route-row is-gate&quot; data-route=&quot;vf-dossier&quot;&gt;
+      &lt;span class=&quot;vf-route-num&quot;&gt;08&lt;/span&gt;&lt;div&gt;
+        &lt;div class=&quot;vf-route-head&quot;&gt;&lt;strong&gt;&lt;a href=&quot;#vf-dossier&quot;&gt;Examendossier gereedmaken&lt;/a&gt;&lt;/strong&gt;&lt;span class=&quot;vf-human&quot;&gt;Mens · Opleidingen controleert per zaal&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;vf-track&quot;&gt;&lt;div class=&quot;vf-unit&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Input&lt;/span&gt;Scriptie, bijlagen, beoordelingen, formulieren, presentatie&lt;/div&gt;&lt;span class=&quot;vf-arrow&quot; aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;&lt;div class=&quot;vf-unit decision&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Beslissing&lt;/span&gt;Juiste versies aanwezig; presentatie getest?&lt;/div&gt;&lt;span class=&quot;vf-arrow&quot; aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;&lt;div class=&quot;vf-unit output&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Ja · output&lt;/span&gt;Gecontroleerde zaalmap voor de examendag&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;vf-divert&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Nee · actie&lt;/span&gt;&lt;span&gt;Ontbrekend onderdeel met eigenaar en deadline vastleggen; niet als gereed markeren.&lt;/span&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;vf-route-row is-gate&quot; data-route=&quot;vf-examendag&quot;&gt;
+      &lt;span class=&quot;vf-route-num&quot;&gt;09&lt;/span&gt;&lt;div&gt;
+        &lt;div class=&quot;vf-route-head&quot;&gt;&lt;strong&gt;&lt;a href=&quot;#vf-examendag&quot;&gt;Verdediging en uitslag&lt;/a&gt;&lt;/strong&gt;&lt;span class=&quot;vf-human&quot;&gt;Mens · voorzitter/examinatoren beoordelen; Opleidingen controleert&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;vf-track&quot;&gt;&lt;div class=&quot;vf-unit&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Input&lt;/span&gt;Mondelinge formulieren en totaalscore&lt;/div&gt;&lt;span class=&quot;vf-arrow&quot; aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;&lt;div class=&quot;vf-unit decision&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Beslissing&lt;/span&gt;Formulieren, score en ondertekening volledig en consistent?&lt;/div&gt;&lt;span class=&quot;vf-arrow&quot; aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;&lt;div class=&quot;vf-unit output&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Ja · output&lt;/span&gt;Gecontroleerde uitslag in Excel en communicatie&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;vf-divert&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Nee · blokkade&lt;/span&gt;&lt;span&gt;Geen definitieve uitslag communiceren; ontbrekend bewijs opvragen.&lt;/span&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;vf-route-phase&quot;&gt;Afsluiten&lt;/div&gt;
+    &lt;div class=&quot;vf-route-row is-gate&quot; data-route=&quot;vf-afsluiten&quot;&gt;
+      &lt;span class=&quot;vf-route-num&quot;&gt;10&lt;/span&gt;&lt;div&gt;
+        &lt;div class=&quot;vf-route-head&quot;&gt;&lt;strong&gt;&lt;a href=&quot;#vf-afsluiten&quot;&gt;Chainwise en afsluiting&lt;/a&gt;&lt;/strong&gt;&lt;span class=&quot;vf-human&quot;&gt;Mens · Opleidingen verifieert registratie&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;vf-track&quot;&gt;&lt;div class=&quot;vf-unit&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Input&lt;/span&gt;Excel-uitslag, examendossier en Chainwise&lt;/div&gt;&lt;span class=&quot;vf-arrow&quot; aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;&lt;div class=&quot;vf-unit decision&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Beslissing&lt;/span&gt;Deelname, examendatum en uitslag komen overeen?&lt;/div&gt;&lt;span class=&quot;vf-arrow&quot; aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;&lt;div class=&quot;vf-unit output&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Ja · output&lt;/span&gt;Gecontroleerde eindstatus; cyclus afsluiten&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;vf-divert rework&quot;&gt;&lt;span class=&quot;vf-cap&quot;&gt;Nee · herstel&lt;/span&gt;&lt;span&gt;Verschil als actie registreren en corrigeren; cyclus blijft open.&lt;/span&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;h3 class=&quot;vf-detail-heading&quot;&gt;Handelingen en Excel-registratie per stap&lt;/h3&gt;
+  &lt;p class=&quot;vf-detail-intro&quot;&gt;Klik een stap open voor de werkwijze, stopregel, eigenaar en statusvelden.&lt;/p&gt;
 
   &lt;div class=&quot;vf-flow&quot;&gt;
     &lt;div class=&quot;vf-phase&quot;&gt;Voorbereiden&lt;/div&gt;
@@ -1686,6 +1808,13 @@ html&gt;body{padding:0}&lt;/style&gt;
     (() =&gt; {
       const root = document.getElementById(&#x27;verdediging-flow&#x27;);
       if (!root) return;
+      root.querySelectorAll(&#x27;.vf-route-head a&#x27;).forEach(link =&gt; {
+        link.addEventListener(&#x27;click&#x27;, () =&gt; {
+          const id = link.getAttribute(&#x27;href&#x27;)?.slice(1);
+          const step = id &amp;&amp; root.querySelector(`details#${id}`);
+          if (step) step.open = true;
+        });
+      });
       const saved = window.openai?.widgetState?.privateContent?.open;
       if (Array.isArray(saved)) {
         root.querySelectorAll(&#x27;details.vf-step&#x27;).forEach(d =&gt; { d.open = saved.includes(d.id); });
